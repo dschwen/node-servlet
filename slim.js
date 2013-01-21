@@ -47,7 +47,7 @@ function init() {
   var s, i, port = 8080;
 
   function setupServlet(s) {
-    var d;
+    var d, handler = null;
 
     // get full path
     s.file = path.resolve(s.file);
@@ -77,7 +77,12 @@ function init() {
     // set up file watcher
     s.notify = new Notify( s.deps ); 
     s.notify.on( 'change', function() {
-      restartServlet(s);
+      // clear existing timeout handler
+      if( handler !== null ) {
+        clearTimeout(handler);
+      }
+      // set 1sec timeout to avoid double restart triggered by editors like vim
+      handler = setTimeout( function() { restartServlet(s); }, 1000 );
     } );
 
     // add to bouncy config
