@@ -11,6 +11,15 @@ var servlets = [
 
 var hosts = {};
 
+function stopServlet(s) {
+  if( s.object ) {
+    if( !'stop' in s.object ) {
+      console.log( 'No stop method in servlet', s.file );
+    }
+    s.object.stop();
+  }
+}
+
 function restartServlet(s) {
   var o;
   console.log( 'Restarting servlet', s.file );
@@ -27,12 +36,7 @@ function restartServlet(s) {
   }
 
   // stop old version
-  if( s.object ) {
-    if( !'stop' in s.object ) {
-      console.log( 'No stop method in servlet!' );
-    }
-    s.object.stop();
-  }
+  stopServlet(s);
 
   // start new version
   s.object = o;
@@ -107,6 +111,14 @@ function init() {
     }
   });
   server.listen(8000);
+
+  // graceful shutdown
+  process.on( 'SIGINT', function() {
+    for( i=0; i < servlets.length;  i++ ) {
+      stopServlet( servlets[i] );
+    }
+    process.exit(0);
+  });
 }
 
 init();
