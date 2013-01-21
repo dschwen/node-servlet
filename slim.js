@@ -41,25 +41,41 @@ function restartServlet(s) {
   } else {
     s.object.start( { port: s.port } );
   }
-
-  // TODO: detect dependencies
 }
 
 function init() {
   var s, i, port = 8080;
 
   function setupServlet(s) {
+    var d;
+
     // get full path
     s.file = path.resolve(s.file);
 
     // set port number
     s.port = s.port || port++;
 
+    // clear require cache
+    for( d in require.cache ) {
+      if( typeof d === 'string' ) {
+        delete require.cache[d];
+      }
+    }
+
     // start servlet
     restartServlet(s);
 
+    // dependencies
+    s.deps = [];
+    for( d in require.cache ) {
+      if( typeof d === 'string' ) {
+        s.deps.push(d);
+      }
+    }
+    console.log(s.deps);
+
     // set up file watcher
-    s.notify = new Notify( [ s.file ] ); 
+    s.notify = new Notify( s.deps ); 
     s.notify.on( 'change', function() {
       restartServlet(s);
     } );
