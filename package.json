@@ -1,0 +1,42 @@
+{
+  "name": "servlet",
+  "version": "0.0.1",
+  "description": "Single thread, multiple host node application server",
+  "homepage": "http://schwen.de",
+  "keywords": [
+    "server"
+  ],
+  "author": {
+    "name": "Daniel Schwen",
+    "email": "node@schwen.de"
+  },
+  "contributors": [
+    {
+      "name": "Daniel Schwen",
+      "email": "node@schwen.de"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dschwen/node-servlet.git"
+  },
+  "dependencies": {
+    "bouncy": "2.0.0",
+    "fs.notify": "0.0.3"
+  },
+  "devDependencies": {
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "readme": "Run multiple servers in one node.js process, restarting individual servers when their code files change on disk.",
+  "_id": "servlet@0.0.1",
+  "dist": {
+    "shasum": ""
+  },
+  "_from": "servlet"
+}
