@@ -1,0 +1,4 @@
+[
+  { "file": "./test1.js", "host": "test1.node.schwen.de" },
+  { "file": "./test2.js", "host": "test2.node.schwen.de" }
+]

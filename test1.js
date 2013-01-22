@@ -1,7 +1,7 @@
 var bouncy = require('bouncy')
 
-exports.start = function() {
-  console.log("Starting test1");
+exports.start = function( options ) {
+  console.log("Starting test1 on port ", options.port );
 }
 
 exports.stop = function() {

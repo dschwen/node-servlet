@@ -1,10 +1,13 @@
 {
   "name": "servlet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Single thread, multiple host node application server",
   "homepage": "http://schwen.de",
   "keywords": [
-    "server"
+    "server", 
+    "watch", 
+    "multiple", 
+    "reload"
   ],
   "author": {
     "name": "Daniel Schwen",
@@ -21,25 +24,17 @@
     "url": "https://github.com/dschwen/node-servlet.git"
   },
   "dependencies": {
-    "bouncy": "2.0.0",
-    "fs.notify": "0.0.3"
+    "bouncy": ">= 2.0.0",
+    "fs.notify": ">= 0.0.3"
   },
   "devDependencies": {
   },
   "main": "lib/servlet.js",
   "bin" : {
     "servlet": "bin/servlet.js"
-  }
+  },
   "engines": {
     "node": ">= 0.6.0"
   },
-  "scripts": {
-    "test": "make test"
-  },
-  "readme": "Run multiple servers in one node.js process, restarting individual servers when their code files change on disk.",
-  "_id": "servlet@0.0.1",
-  "dist": {
-    "shasum": ""
-  },
-  "_from": "servlet"
+  "readme": "# servlet\n\nrun multiple servers in one node.js process, restarting individual servers when their code files change on disk\n\nservlet uses [fs.watch] to monitor server module source files and its own configuration file. Modules are reloaded to realize changes immediately.",
 }
