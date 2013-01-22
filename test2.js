@@ -1,5 +1,5 @@
-exports.start = function() {
-  console.log("Starting test2");
+exports.start = function( options ) {
+  console.log("Starting test2 on port", options.port );
 }
 
 exports.stop = function() {
