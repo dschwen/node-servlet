@@ -5,6 +5,7 @@ var configFile = process.argv[2]
   , fs = require('fs')
   , Notify = require('fs.notify')
   , servlet = require('../')
+  , handler = null
   ;
 
 if (!configFile || !port) {
@@ -19,7 +20,10 @@ servlet.init( config, port );
 // set up watch on config file
 var notifier = new Notify( configFile );
 notifier.on( 'change', function(){
-  var config = JSON.parse(fs.readFileSync(configFile));
-  servlet.updateConfig( conf )
+  clearTimeout( handler );
+  handler = setTimeout( function() {
+    var config = JSON.parse(fs.readFileSync(configFile));
+    servlet.updateConfig( config );
+  }, 1000 );
 });
 
