@@ -24,7 +24,7 @@
     "url": "https://github.com/dschwen/node-servlet.git"
   },
   "dependencies": {
-    "bouncy": "2.0.x",
+    "bouncy": "3.x",
     "fs.notify": "0.0.x"
   },
   "devDependencies": {
