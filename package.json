@@ -1,6 +1,6 @@
 {
   "name": "servlet",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Single thread, multiple host node application server",
   "homepage": "http://schwen.de",
   "keywords": [
