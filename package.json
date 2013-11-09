@@ -1,6 +1,6 @@
 {
   "name": "servlet",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Single thread, multiple host node application server",
   "homepage": "http://schwen.de",
   "keywords": [
@@ -36,5 +36,5 @@
   "engines": {
     "node": ">= 0.6.0"
   },
-  "readme": "# servlet\n\nrun multiple servers in one node.js process, restarting individual servers when their code files change on disk\n\nservlet uses [fs.watch] to monitor server module source files and its own configuration file. Modules are reloaded to realize changes immediately.\n\n## Running servlet\n\n```> servlet config.conf 8080```\n\n## Example config\n\n```\n[\n  { \"host\": \"project1.example.com\", \"file\": \"./project1/index.js\" },\n  { \"host\": \"project2.example.com\", \"file\": \"../funstuff/server.js\" }\n]\n```"
+  "readme": "# servlet\n\nrun multiple servers in one node.js process, restarting individual servers when their code files change on disk\n\nservlet uses [fs.watch] to monitor server module source files and its own configuration file. Modules are reloaded to realize changes immediately.\n\n## Running servlet\n\n```> servlet config.conf 8080 wwwdata:wwwdata```\n\n## Example config\n\n```\n[\n  { \"host\": \"project1.example.com\", \"file\": \"./project1/index.js\" },\n  { \"host\": \"project2.example.com\", \"file\": \"../funstuff/server.js\" }\n]\n```"
 }
