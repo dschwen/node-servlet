@@ -25,8 +25,8 @@ if( process.getuid() == 0 ) {
   }
 
   var ug=ugid.split(':');
-  process.setuid(ug[0]);
   process.setgid(ug[1]);
+  process.setuid(ug[0]);
 }
 
 // set up watch on config file
