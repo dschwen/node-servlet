@@ -10,10 +10,9 @@ configuration changes (allowing you to hot-add and -remove servlets).
 
 Example:
 
+running on unprivileged port:
 ```servlet config.conf 8080```
 
-running on unprivileged port)
-
+running on privileged port as root and shedding priviliges immediately to continue as user ```wwwdata```:
 ```servlet config.conf 80 wwwdata:wwwdata```  
 
- running on privileged port as root and shedding priviliges immediately to continue as user ```wwwdata```
