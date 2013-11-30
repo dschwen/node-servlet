@@ -1,6 +1,8 @@
 node-servlet
 ============
 
+[![NPM](https://nodei.co/npm/servlet.png)](https://nodei.co/npm/servlet/)
+
 Run multiple servers in one node.js process, restarting individual servers when their code files change on disk.
 
 Servlet uses bouncy to route traffic based on host headers to individual projects ("servlets"). A servlet is a 
