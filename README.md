@@ -1,7 +1,7 @@
 node-servlet
 ============
 
-[![NPM](https://nodei.co/npm/servlet.png)](https://nodei.co/npm/servlet/)
+[![NPM](https://nodei.co/npm/servlet.png#1)](https://nodei.co/npm/servlet/)
 
 Run multiple servers in one node.js process, restarting individual servers when their code files change on disk.
 
